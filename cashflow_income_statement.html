@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cashflow.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>CashFlow</title>
+</head>
+<body>
+    <div id="income_statement" class="container-fluid">
+       <div class="row">
+
+        <div id="income" class="col border border-dark">
+            <h1>Income</h1>
+
+            <p>Salary: <input id="salary" type="number" step="any" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            
+            <h3>Dividend/Interest</h3>
+
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="dividend_1" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="dividend_2" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+
+            <h3>Real Estate/Business</h3>
+
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="business_1" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="business_2" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="business_3" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="business_4" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="business_5" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="business_6" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="business_7" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="business_8" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+        </div>
+        <div id="cashflow" class="col">
+            <p class="sign">Profession: <input type="text" autocapitalize="on" autocomplete="off"></p>
+            <p class="sign">Dream: <input type="text" autocapitalize="on" autocomplete="off"></p>
+            <p class="sign">Auditor: <input type="text" autocapitalize="on" autocomplete="off"></p>
+
+            <div class="border border-dark">
+                <h3 class="signs" id="salary_display">Salary: 0</h3>
+                <p class="signs">+</p>
+                <h3 class="signs" id="passive_income">Passive Income: 0</h3>
+                <p class="signs">=</p>
+                <h3 class="signs" id="total_income">Total Income: 0</h3>
+                <p class="signs">-</p>
+                <h3 class="signs" id="total_expenses">Total Expenses: 0</h3>
+                <p class="signs">=</p>
+                <h3 class="signs" id="monthly_cashflow">Monthly Cashflow: 0</h3>
+                <button id="paycheck" class="btn btn-outline-success btn-lg">Paycheck</button>
+
+            </div>
+           
+
+        </div>
+       </div>
+        
+
+        <div id="expenses" class="border border-dark">
+            <h1>Expenses</h1>
+
+            <p>Taxes: <input id="taxes" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p>Home Mortgage Payment: <input id="home_mortgage_payment" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p>School Loan Payment: <input id="school_loan_payment" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p>Car Loan Payment: <input id="car_loan_payment" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p>Credit Card Payment: <input id="credit_card_payment" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p>Other Expenses: <input id="other_expenses" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p>Bank Loan Payment: (10% of Bank Loan total) <input id="bank_loan_payment" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            <p>Per child Expense: <input id="child_no" type="number" min="0" max="3" value="0" onchange="computeCashflow()"> X <input id="perchild_expense" step="any" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p></p> 
+
+
+        </div>
+    </div>
+
+    <div id="balance_sheet" class="container-fluid">
+
+        <div class="row">
+            <div id="assets" class="col-7 border border-dark">
+                <h1>Assets</h1>
+    
+                <p>Savings: <input id="savings" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p>Precious Metals, Etc: <input type="text" autocomplete="off" autocapitalize="on"><input id="precious_metals" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+    
+                <p>Stocks/Funds/CDs: </p>
+    
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="no_of_stocks1" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"> X <input id="stocks_1" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="no_of_stocks2" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"> X <input id="stocks_2" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="no_of_stocks3" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"> X <input id="stocks_3" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="no_of_stocks4" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"> X <input id="stocks_4" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+    
+                <p>Real Estate/Business: </p>
+                
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="down_p1" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"><input id="cost_real1" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="down_p2" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"><input id="cost_real2" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="down_p3" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"><input id="cost_real3" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="down_p4" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"><input id="cost_real4" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="down_p5" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"><input id="cost_real5" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="down_p6" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"><input id="cost_real6" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+    
+            </div>
+    
+            <div id="liabilities" class="col-5 border border-dark">
+                <h1>Liabilities</h1>
+                <p>Home Mortgage: <input id="l1_home_mortgage" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p>School Loan: <input id="l2_school_loan" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p>Car Loan: <input id="l3_car_loan" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p>Credit Card Debt: <input id="l4_credit_card_debt" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p>Bank Loan: <input id="l5_bank_loan" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+    
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="l6__others_1" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="l7_others_2" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+    
+    
+                <p>Real Estate/Business: </p>
+    
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="mortgage_1" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="mortgage_2" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="mortgage_3" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="mortgage_4" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="mortgage_5" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+                <p><input type="text" autocomplete="off" autocapitalize="on">: <input id="mortgage_6" type="number" min="0" max="5000000" value="0" onchange="computeCashflow()"></p>
+            </div>
+        </div>
+
+        </div>
+        
+
+    <script src="cashflow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

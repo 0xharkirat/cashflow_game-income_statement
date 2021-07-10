@@ -1,0 +1,30 @@
+#expenses {
+    width: 50%;
+}
+
+.signs {
+    font-size: 200%;
+    text-align: center;
+}
+
+div {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    padding: 12px;
+}
+
+#paycheck {
+    position: relative;
+    top: 2%;
+    left: 40%;
+
+}
+
+.sign{
+    font-size: 225%;
+}
